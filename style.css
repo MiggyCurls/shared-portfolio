@@ -2,3 +2,38 @@
     External CSS
     Work in progress
 */
+*{
+    background-color:beige;
+    margin-left:10px;
+    margin-right:10px;
+}
+img {
+    height:auto;
+    width:500px;
+    border:5px;
+    border-style:solid;
+    border-color:black;
+}
+#Heading{
+    font-family:'Courier New', Courier, monospace;
+    position:relative;
+    top:10px;
+    left:43%;
+}
+#intro-paragraph{
+    border-width:5px;
+    border-style:double;
+    border-right-color:beige;
+    border-left-color:beige;
+    border-radius:20%;
+}
+#technical{
+    border-width:2px;
+    border-style:dashed;
+    margin-right:80%;
+}
+#contact{
+    position:relative;
+    top:auto;
+    left:47%;
+}

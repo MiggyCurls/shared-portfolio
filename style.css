@@ -3,6 +3,7 @@
     Work in progress
     Need to learn more about position of elements 
     along with how to make UI feel prettier to look at
+    Go for class over ID
 */
 * {
     margin-left:15px;
@@ -40,8 +41,17 @@ img {
     margin-right:80%;
     
 }
+.SkillIcons {
+    width:25px;
+    height:25px;
+    border-color:white;
+    border-width:4px;
+    border-style:outset;
+    border-radius:10px;
+}
 #contact {
     position:relative;
+    padding-top:10px;
     top:auto;
     left:47%;
     width:150px;

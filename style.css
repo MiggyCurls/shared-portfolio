@@ -39,7 +39,11 @@ img {
     border-width:2px;
     border-style:dashed;
     margin-right:80%;
-    
+    width:max-content;
+}
+#Skills {
+    display:flex;
+    flex-direction:row;
 }
 .SkillIcons {
     width:25px;
@@ -49,12 +53,18 @@ img {
     border-style:outset;
     border-radius:10px;
 }
+.SkillTitle {
+    font-family:'Arial Narrow Bold', sans-serif;
+    font-size:medium;
+}
 #contact {
     position:relative;
     padding-top:10px;
+    font-size:larger;
+    color:rgb(75, 75, 75);
     top:auto;
     left:47%;
-    width:150px;
+    width:200px;
 }
 #topPage {
     background-color:beige;

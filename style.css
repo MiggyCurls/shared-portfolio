@@ -18,6 +18,7 @@ img {
     border:5px;
     border-style:solid;
     border-color:black;
+    margin-top:5%;
 }
 th {
     border:2px;
@@ -48,6 +49,12 @@ table {
 #Projects {
     height:min-content;
 }
+#inProgress {
+    width:min-content;
+}
+.projectText {
+    font-family:"Ubuntu";
+}
 #technical {
     width:max-content;
     border-width:2px;
@@ -55,6 +62,10 @@ table {
     margin-right:80%;
 }
 #Skills {
+    display:flex;
+    flex-direction:row;
+}
+.rowElements {
     display:flex;
     flex-direction:row;
 }

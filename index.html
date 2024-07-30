@@ -6,7 +6,8 @@
         <title>
             Portfolio by Miguel and Ian
         </title>
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
     </head>
     <body>
         <header id="Intro">
@@ -37,10 +38,30 @@
             <h2>
                 Future Projects
             </h2>
-            <figure>
-                <img src="ImageAssets/under-construction-warning-sign.jpg" alt="Under construction sign">
-                <figcaption>No Projects currently posted, projects are still in the workings</figcaption>
-            </figure>
+            <div class="rowElements">
+                <div id="inProgress">
+                    <h3>
+                        Calculator app
+                    </h3>
+                    <figure>
+                        <img src="ImageAssets/calculatorBest.png" alt="Simple Calculator Design">
+                        <figcaption>The Calculator will have a cute design with simple functionality</figcaption>
+                    </figure>
+                    <p class="projectText">
+                        The calculator will have a basic design (no high contrast colors) and will be styled
+                        with techniques used in CSS. Special fonts and textures will be listed where they 
+                        were downloaded and with their respective author. The calculator should be user-friendly
+                        and allow for addition, subtraction, multiplication, division, and much more that can
+                        be done with a standard calculator. Should be built with HTML, CSS, and Javascript.
+                    </p>
+                </div>
+                <div id="notProgress">
+                    <figure>
+                        <img src="ImageAssets/under-construction-warning-sign.jpg" alt="Under construction sign">
+                        <figcaption>No Projects currently posted, projects are still in the workings</figcaption>
+                    </figure>
+                </div>
+            </div>
         </section>
             <hr>
         <section id="technical">

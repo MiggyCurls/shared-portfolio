@@ -3,6 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
             Portfolio by Miguel and Ian
         </title>
@@ -40,20 +41,22 @@
             </h2>
             <div class="rowElements">
                 <div id="inProgress">
-                    <h3>
-                        Calculator app
-                    </h3>
-                    <figure>
-                        <img src="ImageAssets/calculatorBest.png" alt="Simple Calculator Design">
-                        <figcaption>The Calculator will have a cute design with simple functionality</figcaption>
-                    </figure>
-                    <p class="projectText">
-                        The calculator will have a basic design (no high contrast colors) and will be styled
-                        with techniques used in CSS. Special fonts and textures will be listed where they 
-                        were downloaded and with their respective author. The calculator should be user-friendly
-                        and allow for addition, subtraction, multiplication, division, and much more that can
-                        be done with a standard calculator. Should be built with HTML, CSS, and Javascript.
-                    </p>
+                    <div id="calcDiv">
+                        <h3>
+                            Calculator app
+                        </h3>
+                        <figure>
+                            <img id="calcImage" src="ImageAssets/calculatorBest.png" onclick="window.location.href='CalculatorProject/calcIndex.html'" alt="Simple Calculator Design">
+                            <figcaption>The Calculator will have a cute design with simple functionality</figcaption>
+                        </figure>
+                        <p class="projectText">
+                            The calculator will have a basic design (no high contrast colors) and will be styled
+                            with techniques used in CSS. Special fonts and textures will be listed where they 
+                            were downloaded and with their respective author. The calculator should be user-friendly
+                            and allow for addition, subtraction, multiplication, division, and much more that can
+                            be done with a standard calculator. Should be built with HTML, CSS, and Javascript.
+                        </p>
+                    </div>
                 </div>
                 <div id="notProgress">
                     <figure>

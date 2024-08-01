@@ -52,6 +52,18 @@ table {
 #inProgress {
     width:min-content;
 }
+#calcImage {
+    cursor:pointer;
+}
+#calcDiv {
+    width:min-content;
+    border:3px;
+    border-radius:5px;
+    border-style:ridge;
+    border-color:aquamarine;
+    background-color:aquamarine;
+    transition:transform 1s ease; 
+}
 .projectText {
     font-family:"Ubuntu";
 }

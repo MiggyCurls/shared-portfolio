@@ -1,0 +1,28 @@
+/*
+External CSS file to make 
+Simple Dimple Calculator look cute
+*/
+table {
+    width:400px;
+    height:450px;
+    display:flex;
+    justify-content:center;
+}
+button {
+    background-color:#1a332e;
+    color:white;
+    width:60px;
+    height:75px;
+    border-radius:5px;
+    font-weight:bold;
+    margin:5px;
+}
+#base {
+    width:max-content;
+    height:auto;
+    background-color:aquamarine;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:100px;
+    border-radius:20px;
+}

@@ -10,39 +10,41 @@
     </head>
     <body>
         <div id="base">
-            <input type="text" readonly>
-            <table>
-                <tr>
-                    <td><button type="button">√</button></td>
-                    <td><button type="button">/</button></td>
-                    <td><button type="button">*</button></td>
-                    <td><button type="button">␡</button></td>
-                </tr>
-                <tr>
-                    <td><button type="button">7</button></td>
-                    <td><button type="button">8</button></td>
-                    <td><button type="button">9</button></td>
-                    <td><button type="button">-</button></td>
-                </tr>
-                <tr>
-                    <td><button type="button">4</button></td>
-                    <td><button type="button">5</button></td>
-                    <td><button type="button">6</button></td>
-                    <td><button type="button">+</button></td>
-                </tr>
-                <tr>
-                    <td><button type="button">1</button></td>
-                    <td><button type="button">2</button></td>
-                    <td><button type="button">3</button></td>
-                    <td><button type="button">clr</button></td>
-                </tr>
-                <tr>
-                    <td><button type="button">±</button></td>
-                    <td><button type="button">0</button></td>
-                    <td><button type="button">.</button></td>
-                    <td><button type="button">=</button></td>
-                </tr>
-            </table>
+            <input id="screen" name="screen" type="text" readonly>
+            <div id="controls">
+                <table>
+                    <tr>
+                        <td><button onclick="delButt()" class="others" type="button">␡</button></td>
+                        <td><button class="operators" type="button">√</button></td>
+                        <td><button onclick="operation('/')" class="operators" type="button">/</button></td>
+                        <td><button onclick="operation('*')" class="operators" type="button">*</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="appendDigit('7')" type="button">7</button></td>
+                        <td><button onclick="appendDigit('8')" type="button">8</button></td>
+                        <td><button onclick="appendDigit('9')" type="button">9</button></td>
+                        <td><button onclick="operation('-')" class="operators" type="button">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="appendDigit('4')" type="button">4</button></td>
+                        <td><button onclick="appendDigit('5')" type="button">5</button></td>
+                        <td><button onclick="appendDigit('6')" type="button">6</button></td>
+                        <td><button onclick="operation('+')" class="operators" type="button">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="appendDigit('1')" type="button">1</button></td>
+                        <td><button onclick="appendDigit('2')" type="button">2</button></td>
+                        <td><button onclick="appendDigit('3')" type="button">3</button></td>
+                        <td><button onclick="clearScreen()" type="button">clr</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="signs()" class="others" type="button">±</button></td>
+                        <td><button onclick="appendDigit('0')" type="button">0</button></td>
+                        <td><button onclick="addDecimal()" class="others" type="button">.</button></td>
+                        <td><button type="button">=</button></td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <p>hello, world</p>
         <button type="button" onclick="myListener()">Go back</button>

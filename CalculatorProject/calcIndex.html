@@ -14,39 +14,48 @@
             <div id="controls">
                 <table>
                     <tr>
-                        <td><button onclick="delButt()" class="others" type="button">␡</button></td>
-                        <td><button onclick="addParenthesis()" class="operators" type="button">()</button></td>
-                        <td><button onclick="operation('/')" class="operators" type="button">/</button></td>
-                        <td><button onclick="operation('*')" class="operators" type="button">*</button></td>
+                        <td><button type="button" class="others" onclick="delButt()">␡</button></td>
+                        <td><button type="button" class="operators" onclick="addParenthesis()">()</button></td>
+                        <td><button type="button" class="operators"onclick="operation('/')">/</button></td>
+                        <td><button type="button" class="operators"onclick="operation('*')">*</button></td>
                     </tr>
                     <tr>
-                        <td><button onclick="appendDigit('7')" type="button">7</button></td>
-                        <td><button onclick="appendDigit('8')" type="button">8</button></td>
-                        <td><button onclick="appendDigit('9')" type="button">9</button></td>
-                        <td><button onclick="operation('-')" class="operators" type="button">-</button></td>
+                        <td><button type="button" onclick="appendDigit('7')">7</button></td>
+                        <td><button type="button" onclick="appendDigit('8')">8</button></td>
+                        <td><button type="button" onclick="appendDigit('9')">9</button></td>
+                        <td><button type="button" class="operators" onclick="operation('-')">-</button></td>
                     </tr>
                     <tr>
-                        <td><button onclick="appendDigit('4')" type="button">4</button></td>
-                        <td><button onclick="appendDigit('5')" type="button">5</button></td>
-                        <td><button onclick="appendDigit('6')" type="button">6</button></td>
-                        <td><button onclick="operation('+')" class="operators" type="button">+</button></td>
+                        <td><button type="button" onclick="appendDigit('4')">4</button></td>
+                        <td><button type="button" onclick="appendDigit('5')">5</button></td>
+                        <td><button type="button" onclick="appendDigit('6')">6</button></td>
+                        <td><button type="button" class="operators" onclick="operation('+')">+</button></td>
                     </tr>
                     <tr>
-                        <td><button onclick="appendDigit('1')" type="button">1</button></td>
-                        <td><button onclick="appendDigit('2')" type="button">2</button></td>
-                        <td><button onclick="appendDigit('3')" type="button">3</button></td>
-                        <td><button onclick="clearScreen()" type="button">clr</button></td>
+                        <td><button type="button" onclick="appendDigit('1')">1</button></td>
+                        <td><button type="button" onclick="appendDigit('2')">2</button></td>
+                        <td><button type="button" onclick="appendDigit('3')">3</button></td>
+                        <td><button type="button" onclick="clearScreen()">clr</button></td>
                     </tr>
                     <tr>
-                        <td><button onclick="signs()" class="others" type="button">±</button></td>
-                        <td><button onclick="appendDigit('0')" type="button">0</button></td>
-                        <td><button onclick="addDecimal()" class="others" type="button">.</button></td>
-                        <td><button onclick="calculate()" type="button">=</button></td>
+                        <td><button type="button" class="others" onclick="signs()">±</button></td>
+                        <td><button type="button" onclick="appendDigit('0')">0</button></td>
+                        <td><button type="button" class="others" onclick="addDecimal()">.</button></td>
+                        <td><button type="button" onclick="calculate()">=</button></td>
                     </tr>
                 </table>
             </div>
         </div>
-        <p>hello, world</p>
+        <div id="info">
+            <p>The calculator can perform basic functions, such as: multiplication, addition, division,
+                and subtraction. The calculator can perform these such operations with parenthesis to
+                indicate the desired order of operations; however, the parenthesis cannot go deeper than 
+                one level. An example can be: (2 * 3) + (3.14 / -2). The calculator will perform the calculation
+                when the <b>'='</b> is pressed gathering what is in the screen and outputing to the screen.
+                The <b>'±'</b> will be used to the change the sign of the leftmost digit on screen, if you so 
+                wish to change any of the signs of the other numbers, opt for clicking the <b>'-'</b> instead.
+            </p>
+        </div>
         <button id="exitButton" type="button" onclick="myListener()">Go back</button>
         <script src="calcScript.js"></script>
     </body>

@@ -3,6 +3,9 @@ External CSS file to make
 Simple Dimple Calculator look cute
 Maybe make the calculator look similar to BMO from Adventure Time
 */
+html {
+    background-color:rgba(147, 179, 223, 0.3);
+}
 table {
     width:max-content;
     height:max-content;
@@ -23,6 +26,10 @@ button {
 button:active {
     background-color:#1a332ed3;
 }
+#exitButton {
+    width:150px;
+    height:100px;
+}
 .operators {
     background-color:rgba(57, 85, 245, 0.8);
 }
@@ -38,6 +45,7 @@ button:active {
     margin-top:100px;
     padding:40px;
     border-radius:20px;
+    box-shadow:0px 10px 50px 5px grey;
 }
 #controls {
     display:flex;

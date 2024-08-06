@@ -15,7 +15,7 @@
                 <table>
                     <tr>
                         <td><button onclick="delButt()" class="others" type="button">␡</button></td>
-                        <td><button class="operators" type="button">√</button></td>
+                        <td><button onclick="addParenthesis()" class="operators" type="button">()</button></td>
                         <td><button onclick="operation('/')" class="operators" type="button">/</button></td>
                         <td><button onclick="operation('*')" class="operators" type="button">*</button></td>
                     </tr>
@@ -41,13 +41,13 @@
                         <td><button onclick="signs()" class="others" type="button">±</button></td>
                         <td><button onclick="appendDigit('0')" type="button">0</button></td>
                         <td><button onclick="addDecimal()" class="others" type="button">.</button></td>
-                        <td><button type="button">=</button></td>
+                        <td><button onclick="calculate()" type="button">=</button></td>
                     </tr>
                 </table>
             </div>
         </div>
         <p>hello, world</p>
-        <button type="button" onclick="myListener()">Go back</button>
+        <button id="exitButton" type="button" onclick="myListener()">Go back</button>
         <script src="calcScript.js"></script>
     </body>
 </html>

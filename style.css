@@ -50,9 +50,18 @@ table {
     height:min-content;
 }
 #inProgress {
+    display:flex;
+    flex-direction:row;
     width:min-content;
 }
-#calcImage {
+#loginDiv {
+    width:min-content;
+    border:3px ridge cyan;
+    border-radius:5px;
+    background-color:cyan;
+    transition:transform 1s ease;
+}
+.projectImages {
     cursor:pointer;
 }
 #calcDiv {
@@ -106,4 +115,7 @@ table {
     height:fit-content;
     background-color:rgba(127, 107, 208, 0.5);
     padding-bottom:25px;
+}
+.not-hovered {
+    opacity: 0.5;
 }

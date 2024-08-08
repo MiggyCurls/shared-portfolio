@@ -1,0 +1,92 @@
+/*
+    WORK IN PROGRESS
+*/
+html {
+    height:100vh;
+}
+body {
+    background-image:radial-gradient(circle, rgb(198, 203, 215), rgb(198, 212, 215), rgb(165, 192, 199));
+}
+input {
+    height:30px;
+    width:250px;
+    align-self:flex-start;
+}
+button {
+    background-color:rgb(165, 192, 199);
+    width:100%;
+}
+button:hover {
+    background-color:rgba(165, 192, 199, 0.6);
+}
+input {
+    box-sizing:border-box;
+    height:40px;
+}
+p {
+    margin-bottom:0%;
+    margin-top:5%;
+}
+.accountInfo {
+    padding-top:15px;
+    padding-bottom:15px;
+    align-self:flex-start;
+    font-family:"Bona Nova SC", serif;
+    font-weight:400;
+}
+#theBase {
+    display:flex;
+    justify-content:center;
+    margin-top:10%;
+}
+#loginBase {
+    background-color:whitesmoke;
+    border:7px hidden rgb(255, 255, 255);
+    box-shadow:10px;
+    border-radius:7px;
+    box-shadow:0px 0px 10px 5px rgb(189, 189, 189);
+    width:400px;
+    height:450px;
+    display:flex;
+    justify-content:center;
+}
+#loginBtn {
+    margin-top:15px;
+    height:35px;
+    border:2px solid rgb(165, 192, 199);
+    font-family:"Oswald", sans-serif;
+    font-size:large;
+    font-weight:400;
+    cursor:pointer;
+}
+#loginTitle {
+    font-family:"Oswald", sans-serif;
+    font-weight:500;
+    font-size:x-large;
+}
+#userInput {
+    width:250px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-top:10%;
+    padding-bottom:4%;
+}
+#unameInput {
+    margin-top:25px;
+}
+#goBack {
+    background-color:#1a332e;
+    color:white;
+    width:150px;
+    height:100px;
+    margin:20px;
+    border-radius:5px;
+    border:4px groove gray;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+#goBack:active {
+    background-color:#1a332ed3;
+}

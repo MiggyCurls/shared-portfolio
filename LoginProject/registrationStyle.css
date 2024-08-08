@@ -1,5 +1,5 @@
 /*
-    WORK IN PROGRESS
+    Registration Styling
 */
 html {
     height:100vh;
@@ -8,38 +8,21 @@ body {
     background-image:radial-gradient(circle, rgb(198, 203, 215), rgb(198, 212, 215), rgb(165, 192, 199));
 }
 input {
+    box-sizing:border-box;
     height:30px;
-    width:250px;
-    align-self:flex-start;
 }
 button {
-    background-color:rgb(165, 192, 199);
-    width:100%;
+    background-color:#a5c0c7;
 }
 button:hover {
     background-color:rgba(165, 192, 199, 0.6);
 }
-input {
-    box-sizing:border-box;
-    height:40px;
-}
-p {
-    margin-bottom:0%;
-    margin-top:5%;
-}
-.accountInfo {
-    padding-top:15px;
-    padding-bottom:15px;
-    align-self:flex-start;
-    font-family:"Bona Nova SC", serif;
-    font-weight:400;
-}
-#theBase {
+#box {
     display:flex;
     justify-content:center;
     margin-top:10%;
 }
-#loginBase {
+#registrationBase {
     background-color:whitesmoke;
     box-shadow:10px;
     border-radius:7px;
@@ -49,8 +32,31 @@ p {
     display:flex;
     justify-content:center;
 }
-#loginBtn {
+#registerTitle {
+    align-self:center;
+    font-family:"Oswald", sans-serif;
+    font-weight:500;
+    font-size:x-large;
+    margin:5%;
+}
+#registrationInput {
+    width:250px;
+    height:415px;
+    display:flex;
+    flex-direction:column;
+    align-self:flex-start;
+    padding-top:6%;
+}
+.registerInfo {
+    padding-top:15px;
+    padding-bottom:10px;
+    align-self:flex-start;
+    font-family:"Bona Nova SC", serif;
+    font-weight:400;
+}
+#createBtn {
     margin-top:15px;
+    padding-bottom:10px;
     height:35px;
     border:2px solid rgb(165, 192, 199);
     font-family:"Oswald", sans-serif;
@@ -58,23 +64,7 @@ p {
     font-weight:400;
     cursor:pointer;
 }
-#loginTitle {
-    font-family:"Oswald", sans-serif;
-    font-weight:500;
-    font-size:x-large;
-}
-#userInput {
-    width:250px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding-top:10%;
-    padding-bottom:4%;
-}
-#unameInput {
-    margin-top:25px;
-}
-#goBack {
+#goHome {
     background-color:#1a332e;
     color:white;
     width:150px;
@@ -86,6 +76,6 @@ p {
     font-weight:bold;
     cursor:pointer;
 }
-#goBack:active {
+#goHome:active {
     background-color:#1a332ed3;
 }

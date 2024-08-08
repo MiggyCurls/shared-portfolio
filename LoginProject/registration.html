@@ -6,10 +6,29 @@
         <title>
             Registration Page
         </title>
+        <link rel="stylesheet" href="registrationStyle.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
     </head>
     <body>
-        <H3>
-            hello
-        </H3>
+        <div id="box">
+            <div id="registrationBase">
+                <div id="registrationInput">
+                    <h3 id="registerTitle">
+                        Registration
+                    </h3>
+                    <label class="registerInfo" for="email">Email</label>
+                    <input id="email" type="email" placeholder="Email" maxlength="30">
+                    <label class="registerInfo" for="username">Username</label>
+                    <input id="username" type="text" placeholder="Username" maxlength="30">
+                    <label class="registerInfo" for="password">Password</label>
+                    <input id="password" type="password" placeholder="Password" maxlength="30">
+                    <label class="registerInfo" for="re-enter">Re-enter Password</label>
+                    <input id="re-enter" type="password" placeholder="Password" maxlength="30">
+                    <button id="createBtn" type="button">Create Account</button>
+                </div>
+            </div>
+        </div>
+        <button id="goHome" type="button" onclick="goHome()">Go to Home Page</button>
+        <script src="registrationScript.js"></script>
     </body>
 </html>

@@ -16,15 +16,17 @@
                     <h3 id="registerTitle">
                         Registration
                     </h3>
-                    <label class="registerInfo" for="email">Email</label>
-                    <input id="email" type="email" placeholder="Email" maxlength="30">
-                    <label class="registerInfo" for="username">Username</label>
-                    <input id="username" type="text" placeholder="Username" maxlength="30">
-                    <label class="registerInfo" for="password">Password</label>
-                    <input id="password" type="password" placeholder="Password" maxlength="30">
-                    <label class="registerInfo" for="re-enter">Re-enter Password</label>
-                    <input id="re-enter" type="password" placeholder="Password" maxlength="30">
-                    <button id="createBtn" type="button">Create Account</button>
+                    <form id="registerForm" action="/" method="post">
+                        <label class="registerInfo" for="email">Email</label>
+                        <input id="email" type="email" placeholder="Email" maxlength="30" required>
+                        <label class="registerInfo" for="username">Username</label>
+                        <input id="username" type="text" placeholder="Username" maxlength="30" required>
+                        <label class="registerInfo" for="password">Password</label>
+                        <input id="password" type="password" placeholder="Password" maxlength="30" required>
+                        <label class="registerInfo" for="re-enter">Re-enter Password</label>
+                        <input id="re-enter" type="password" placeholder="Password" maxlength="30" required>
+                        <button id="createBtn" type="submit">Create Account</button>
+                    </form>
                 </div>
             </div>
         </div>

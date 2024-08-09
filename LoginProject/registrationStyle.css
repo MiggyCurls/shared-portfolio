@@ -39,6 +39,10 @@ button:hover {
     font-size:x-large;
     margin:5%;
 }
+#registerForm {
+    display:flex;
+    flex-direction:column;
+}
 #registrationInput {
     width:250px;
     height:415px;

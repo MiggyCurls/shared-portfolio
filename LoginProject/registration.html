@@ -21,10 +21,16 @@
                         <input id="email" type="email" placeholder="Email" maxlength="30" required>
                         <label class="registerInfo" for="username">Username</label>
                         <input id="username" type="text" placeholder="Username" maxlength="30" required>
+                        <p>
+                            Password must be longer than 6 characters, have at least one number,
+                            at least one capital letter, and at least one lowercase letter
+                        </p>
                         <label class="registerInfo" for="password">Password</label>
                         <input id="password" type="password" placeholder="Password" maxlength="30" required>
+                        <div id="pass-Error"></div>
                         <label class="registerInfo" for="re-enter">Re-enter Password</label>
                         <input id="re-enter" type="password" placeholder="Password" maxlength="30" required>
+                        <div id="re-enterError"></div>
                         <button id="createBtn" type="submit">Create Account</button>
                     </form>
                 </div>
@@ -32,5 +38,6 @@
         </div>
         <button id="goHome" type="button" onclick="goHome()">Go to Home Page</button>
         <script src="registrationScript.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     </body>
 </html>

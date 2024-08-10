@@ -11,6 +11,10 @@ input {
     box-sizing:border-box;
     height:30px;
 }
+p {
+    font-size:12px;
+    margin:3px;
+}
 button {
     background-color:#a5c0c7;
 }
@@ -28,7 +32,7 @@ button:hover {
     border-radius:7px;
     box-shadow:0px 0px 10px 5px rgb(189, 189, 189);
     width:400px;
-    height:450px;
+    height:max-content;
     display:flex;
     justify-content:center;
 }
@@ -45,11 +49,12 @@ button:hover {
 }
 #registrationInput {
     width:250px;
-    height:415px;
+    height:max-content;
     display:flex;
     flex-direction:column;
     align-self:flex-start;
     padding-top:6%;
+    padding-bottom:6%;
 }
 .registerInfo {
     padding-top:15px;
@@ -57,6 +62,14 @@ button:hover {
     align-self:flex-start;
     font-family:"Bona Nova SC", serif;
     font-weight:400;
+}
+#pass-Error {
+    font-size:15px;
+    color:red;
+}
+#re-enterError {
+    font-size:15px;
+    color:red;
 }
 #createBtn {
     margin-top:15px;

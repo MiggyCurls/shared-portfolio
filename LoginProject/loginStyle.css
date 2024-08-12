@@ -74,6 +74,11 @@ p {
 #unameInput {
     margin-top:25px;
 }
+#noAccountFound {
+    margin-top:10px;
+    color:red;
+    font-size:medium;
+}
 #goBack {
     background-color:#1a332e;
     color:white;

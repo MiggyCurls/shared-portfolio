@@ -1,4 +1,2 @@
-[{"email":"EmailOne@miami.com","username":"UsernameOne","password":"5d48c3a02c1b181e1ad70c3257d72a00"}
-,{"email":"EmailTwo@miami.com","username":"UsernameTwo","password":"ab00af2ebfa714a69b1e161050030e20"}
-,{"email":"EmailThree@miami.com","username":"UsernameThree","password":"8e5b7eb5812724359349f9986ea6f4db"}
+[{"email":"EmailOne@miami.edu","username":"UsernameOne","password":"00a5e2438acd72cc95b0706393032fc2","salt":125069}
 ]

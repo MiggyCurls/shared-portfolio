@@ -2,7 +2,7 @@
 
 document.getElementById('registerForm').addEventListener('submit', async function postInfo(event) {
     event.preventDefault();
-    
+    const formType = 'registration';
     const email = document.getElementById('email').value;
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -17,15 +17,13 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     }
     if(password === repassword){
         try{
-            const saltyPassword = salt(password);
-            const mdHash = CryptoJS.MD5(saltyPassword).toString();
-            console.log('hash: ', mdHash);
+            //Send password to server where encryption/authentication will occur
             const request = await fetch('http://localhost:8080/', {
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json'
                 },
-                body:JSON.stringify({email, username, mdHash})
+                body:JSON.stringify({formType, email, username, password})
             });
             if(request.ok){
                 alert('Registration Completed');
@@ -62,16 +60,4 @@ function validatePassword(pword){
         errMessageQ.push('Must contain at least one uppercase letter ');
     }
     return errMessageQ;
-}
-//add !$`+ in random order to password before sending to server
-function salt(pword){
-    const salt = ['!', '$', '`', '+'];
-    const max = pword.length;
-    let newPword = pword;
-    for(let i = 0; i < salt.length; i++){
-        let index = Math.floor(Math.random() * max);
-        //separate string and add salt
-        newPword = newPword.slice(0, index) + salt[i] + newPword.slice(index);
-    }
-    return newPword;
 }

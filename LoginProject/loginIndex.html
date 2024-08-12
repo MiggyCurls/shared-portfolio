@@ -17,12 +17,15 @@
                     <h3 id="loginTitle">
                         Login
                     </h3>
-                    <label class="accountInfo" id="unameInput" for="username">Username</label>
-                    <input id="username" type="text" placeholder="Username" maxlength="30">
-                    <label class="accountInfo" for="password">Password</label>
-                    <input id="password" type="password" placeholder="Password" maxlength="30">
-                    <button id="loginBtn" type="button">Login</button>
+                    <form id="loginForm" method="post">
+                        <label class="accountInfo" id="unameInput" for="username">Username</label>
+                        <input id="username" type="text" placeholder="Username" maxlength="30">
+                        <label class="accountInfo" for="password">Password</label>
+                        <input id="password" type="password" placeholder="Password" maxlength="30">
+                        <button id="loginBtn" type="submit">Login</button>
+                    </form>
                     <p>Don't have an account: <a href="registration.html">Create Account</a></p>
+                    <div id="noAccountFound"></div>
                 </div>
             </div>
         </div>

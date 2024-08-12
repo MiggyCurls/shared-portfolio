@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 8080;
 const path = require('path');
+const crypto = require('crypto-js');
 //text file to hold username and passwords
 const fs = require('fs');
 fs.readFile('public/registry.txt','utf-8', (err, data) =>{
@@ -29,17 +30,62 @@ app.get('/', (req, res) =>{
     res.sendFile(path.join(__dirname,'public','registry.txt'));
 });
 app.post('/', (req, res) =>{
-    res.status(200).send({status: 'received'});
+    //res.status(200).send({status: 'received'});
     const body = req.body;
-    users.push({email: body.email, username: body.username, password: body.mdHash});
-    //Separate each JSON object in users with a new line
-    data = makePretty(JSON.stringify(users));
-    //Look into append to file after day one of putting into production
-    fs.writeFile('public/registry.txt', data, err =>{
-        if(err){
-            console.error(err);
+    //Separate post requests from registration and login
+    if(body.formType == 'registration'){
+        res.status(200).send({status: 'received'});
+        const salt = addSalt(body.password);
+        const hash = crypto.MD5(salt[1]);
+        users.push({email: body.email, username: body.username, password: hash.toString(), salt: salt[0]});
+        //Separate each JSON object in users with a new line
+        data = makePretty(JSON.stringify(users));
+        //Look into append to file after day one of putting into production
+        fs.writeFile('public/registry.txt', data, err =>{
+            if(err){
+                console.error(err);
+            }
+        });
+    }else{
+        //formType must be a login
+        //Check login information
+        const body = req.body;
+        const uName = body.username;
+        let supposedPWord = body.password;
+        /*
+            Read through registry file to find username and its corresponding salt,
+            then add salt to password and hash
+            see if hashed password matches what is in the registry
+        */
+        try{
+            const data = fs.readFileSync('public/registry.txt');
+            const users = JSON.parse(data);
+            let index;
+            let userExists = false;
+            let salt;
+            for(let i = 0; i < users.length; i++){
+                if(users[i].username == uName){
+                    salt = users[i].salt;
+                    userExists = true;
+                    index = i;
+                    break;
+                }else{
+                    index = -1;
+                }
+            }
+            supposedPWord += salt;
+            const supposedHash = crypto.MD5(supposedPWord);
+            if(index != -1 && supposedHash == users[index].password){
+                res.status(200).send();
+            }else{
+                res.status(401).send('No user found with corresponding username to password');
+            }
+        }catch(err){
+            console.error('File read error:', err);
         }
-    });
+        
+    }
+    
 });
 
 app.listen(port, () =>{
@@ -55,4 +101,30 @@ function makePretty(data){
         }
     }
     return pretty;
+}
+
+//Salting password with RNG 
+function addSalt(pword){
+    const randNum = Math.floor(Math.random() * 1000000);
+    const newPword = pword + randNum;
+    const saltyPassword = [randNum, newPword];
+    return (saltyPassword);
+}
+
+async function checkUser(uName){
+    let userExists = false;
+    try{
+        const data = fs.readFileSync('public/registry.txt');
+        const users = JSON.parse(data);
+        userExists = users.some(user => user.username == uName);
+        
+        if(userExists){
+            console.log('User found!');
+        }else{
+            console.log('User not found.');
+        }
+    }catch(err){
+        console.error('File read error:', err);
+    }
+    return userExists;
 }

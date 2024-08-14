@@ -1,0 +1,98 @@
+/*
+    Registration Styling
+*/
+html {
+    height:100vh;
+}
+body {
+    background-image:radial-gradient(circle, rgb(198, 203, 215), rgb(198, 212, 215), rgb(165, 192, 199));
+}
+input {
+    box-sizing:border-box;
+    height:30px;
+}
+p {
+    font-size:12px;
+    margin:3px;
+}
+button {
+    background-color:#a5c0c7;
+}
+button:hover {
+    background-color:rgba(165, 192, 199, 0.6);
+}
+#box {
+    display:flex;
+    justify-content:center;
+    margin-top:10%;
+}
+#registrationBase {
+    background-color:whitesmoke;
+    box-shadow:10px;
+    border-radius:7px;
+    box-shadow:0px 0px 10px 5px rgb(189, 189, 189);
+    width:400px;
+    height:max-content;
+    display:flex;
+    justify-content:center;
+}
+#registerTitle {
+    align-self:center;
+    font-family:"Oswald", sans-serif;
+    font-weight:500;
+    font-size:x-large;
+    margin:5%;
+}
+#registerForm {
+    display:flex;
+    flex-direction:column;
+}
+#registrationInput {
+    width:250px;
+    height:max-content;
+    display:flex;
+    flex-direction:column;
+    align-self:flex-start;
+    padding-top:6%;
+    padding-bottom:6%;
+}
+.registerInfo {
+    padding-top:15px;
+    padding-bottom:10px;
+    align-self:flex-start;
+    font-family:"Bona Nova SC", serif;
+    font-weight:400;
+}
+#pass-Error {
+    font-size:15px;
+    color:red;
+}
+#re-enterError {
+    font-size:15px;
+    color:red;
+}
+#createBtn {
+    margin-top:15px;
+    padding-bottom:10px;
+    height:35px;
+    border:2px solid rgb(165, 192, 199);
+    font-family:"Oswald", sans-serif;
+    font-size:large;
+    font-weight:400;
+    cursor:pointer;
+}
+#goHome {
+    background-color:#1a332e;
+    color:white;
+    width:150px;
+    height:100px;
+    margin:20px;
+    border-radius:5px;
+    border:4px groove gray;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+#goHome:active {
+    background-color:#1a332ed3;
+}

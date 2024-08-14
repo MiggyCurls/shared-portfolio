@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta width="device-width, initial-scale=1.0">
+        <title>
+            Registration Page
+        </title>
+        <link rel="stylesheet" href="registrationStyle.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+    </head>
+    <body>
+        <div id="box">
+            <div id="registrationBase">
+                <div id="registrationInput">
+                    <h3 id="registerTitle">
+                        Registration
+                    </h3>
+                    <form id="registerForm" action="/" method="post">
+                        <label class="registerInfo" for="email">Email</label>
+                        <input id="email" type="email" placeholder="Email" maxlength="30" required>
+                        <label class="registerInfo" for="username">Username</label>
+                        <input id="username" type="text" placeholder="Username" maxlength="30" required>
+                        <p>
+                            Password must be longer than 6 characters, have at least one number,
+                            at least one capital letter, and at least one lowercase letter
+                        </p>
+                        <label class="registerInfo" for="password">Password</label>
+                        <input id="password" type="password" placeholder="Password" maxlength="30" required>
+                        <div id="pass-Error"></div>
+                        <label class="registerInfo" for="re-enter">Re-enter Password</label>
+                        <input id="re-enter" type="password" placeholder="Password" maxlength="30" required>
+                        <div id="re-enterError"></div>
+                        <button id="createBtn" type="submit">Create Account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <button id="goHome" type="button" onclick="goHome()">Go to Home Page</button>
+        <script src="registrationScript.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    </body>
+</html>

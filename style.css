@@ -18,6 +18,7 @@ img {
     border:5px;
     border-style:solid;
     border-color:black;
+    margin-top:5%;
 }
 th {
     border:2px;
@@ -48,6 +49,33 @@ table {
 #Projects {
     height:min-content;
 }
+#inProgress {
+    display:flex;
+    flex-direction:row;
+    width:min-content;
+}
+#loginDiv {
+    width:min-content;
+    border:3px ridge cyan;
+    border-radius:5px;
+    background-color:cyan;
+    transition:transform 1s ease;
+}
+.projectImages {
+    cursor:pointer;
+}
+#calcDiv {
+    width:min-content;
+    border:3px;
+    border-radius:5px;
+    border-style:ridge;
+    border-color:aquamarine;
+    background-color:aquamarine;
+    transition:transform 1s ease; 
+}
+.projectText {
+    font-family:"Ubuntu";
+}
 #technical {
     width:max-content;
     border-width:2px;
@@ -55,6 +83,10 @@ table {
     margin-right:80%;
 }
 #Skills {
+    display:flex;
+    flex-direction:row;
+}
+.rowElements {
     display:flex;
     flex-direction:row;
 }
@@ -83,4 +115,7 @@ table {
     height:fit-content;
     background-color:rgba(127, 107, 208, 0.5);
     padding-bottom:25px;
+}
+.not-hovered {
+    opacity: 0.5;
 }

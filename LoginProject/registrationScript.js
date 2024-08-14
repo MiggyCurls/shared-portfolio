@@ -27,6 +27,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
             });
             if(request.ok){
                 alert('Registration Completed');
+                window.location.href = 'loginIndex.html';
             }else{
                 console.log('Registration failed');
             }

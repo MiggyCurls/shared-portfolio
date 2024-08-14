@@ -1,6 +1,9 @@
 /*
     WORK IN PROGRESS
 */
+:root {
+    --time: 5s;
+}
 html {
     height:100vh;
 }
@@ -35,9 +38,91 @@ p {
     font-weight:400;
 }
 #theBase {
+    height:100%;
+    width:100%;
     display:flex;
     justify-content:center;
     margin-top:10%;
+}
+.confetti:nth-child(1) {
+    background-color: #f2d74e; left: 28%; 
+    animation:confetti var(--time) ease-in-out 2.529s;
+}
+.confetti:nth-child(2) {
+    background-color: #95c3de; left: 30%; 
+    animation:confetti var(--time) ease-in-out 0.662s;
+}
+.confetti:nth-child(3) {
+    background-color: #ff9a91; left: 32%; 
+    animation:confetti var(--time) ease-in-out 1.636s;
+}
+.confetti:nth-child(4) {
+    background-color: #f2d74e; left: 34%; 
+    animation:confetti var(--time) ease-in-out 1.506s;
+}
+.confetti:nth-child(5) {
+    background-color: #95c3de; left: 36%; 
+    animation:confetti var(--time) ease-in-out 0.825s;
+}
+.confetti:nth-child(6) {
+    background-color: #ff9a91; left: 38%; 
+    animation:confetti var(--time) ease-in-out 0.751s;
+}
+.confetti:nth-child(7) {
+    background-color: #f2d74e; left: 40%; 
+    animation:confetti var(--time) ease-in-out 1.526s;
+}
+.confetti:nth-child(8) {
+    background-color: #95c3de; left: 42%; 
+    animation:confetti var(--time) ease-in-out 0.975s;
+}
+.confetti:nth-child(9) {
+    background-color: #ff9a91; left: 44%; 
+    animation:confetti var(--time) ease-in-out 0.555s;
+}
+.confetti:nth-child(10) {
+    background-color: #f2d74e; left: 46%; 
+    animation:confetti var(--time) ease-in-out 1.305s;
+}
+.confetti:nth-child(11) {
+    background-color: #f2d74e; left: 48%; 
+    animation:confetti var(--time) ease-in-out 1.316s;
+}
+.confetti:nth-child(12) {
+    background-color: #95c3de; left: 50%; 
+    animation:confetti var(--time) ease-in-out 1.204s;
+}
+.confetti:nth-child(13) {
+    background-color: #ff9a91; left: 52%; 
+    animation:confetti var(--time) ease-in-out 0.528s;
+}
+.confetti:nth-child(14) {
+    background-color: #f2d74e; left: 54%; 
+    animation:confetti var(--time) ease-in-out 1.15s;
+}
+.confetti:nth-child(15) {
+    background-color: #95c3de; left: 56%; 
+    animation:confetti var(--time) ease-in-out 0.622s;
+}
+.confetti:nth-child(16) {
+    background-color: #ff9a91; left: 58%; 
+    animation:confetti var(--time) ease-in-out 1.274s;
+}
+.confetti:nth-child(17) {
+    background-color: #f2d74e; left: 60%; 
+    animation:confetti var(--time) ease-in-out 2.329s;
+}
+.confetti:nth-child(18) {
+    background-color: #95c3de; left: 62%; 
+    animation:confetti var(--time) ease-in-out 1.895s;
+}
+.confetti:nth-child(19) {
+    background-color: #ff9a91; left: 64%; 
+    animation:confetti var(--time) ease-in-out 2.197s;
+}
+.confetti:nth-child(20) {
+    background-color: #f2d74e; left: 66%; 
+    animation:confetti var(--time) ease-in-out 2.158s;
 }
 #loginBase {
     background-color:whitesmoke;
@@ -74,7 +159,7 @@ p {
 #unameInput {
     margin-top:25px;
 }
-#noAccountFound {
+#errorBox {
     margin-top:10px;
     color:red;
     font-size:medium;
@@ -93,4 +178,11 @@ p {
 }
 #goBack:active {
     background-color:#1a332ed3;
+}
+@keyframes confetti {
+    0% { transform: rotateZ(15deg) rotateY(0deg) translate(0,0); }
+    25% { transform: rotateZ(5deg) rotateY(360deg) translate(-5vw,20vh); }
+    50% { transform: rotateZ(15deg) rotateY(720deg) translate(5vw,60vh); }
+    75% { transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw,80vh); }
+    100% { transform: rotateZ(15deg) rotateY(1440deg) translate(10vw,90vh); }
 }

@@ -24,7 +24,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
-let users = [];
+
 let data = "";
 app.get('/', (req, res) =>{
     res.sendFile(path.join(__dirname,'public','registry.txt'));
@@ -37,15 +37,39 @@ app.post('/', (req, res) =>{
         res.status(200).send({status: 'received'});
         const salt = addSalt(body.password);
         const hash = crypto.MD5(salt[1]);
-        users.push({email: body.email, username: body.username, password: hash.toString(), salt: salt[0]});
+        //users.push({email: body.email, username: body.username, password: hash.toString(), salt: salt[0]});
         //Separate each JSON object in users with a new line
-        data = makePretty(JSON.stringify(users));
+        //data = makePretty(JSON.stringify(users));
+        /*
+        First create a user array that is empty to store users to be put into JSON format
+        access registry file and check to add anything that is there (can be nothing) to
+        users array and then write to file after to keep it one big array of users
+        */
+        try{
+            let users = [];
+            let data = fs.readFileSync('public/registry.txt');
+            if(data.length != 0){
+                users = JSON.parse(data);
+                //console.log(users);
+            }
+            users.push({email: body.email, username: body.username, password: hash.toString(), salt: salt[0]});
+            data = makePretty(JSON.stringify(users));
+            fs.writeFile('public/registry.txt', data, err => {
+                if(err){
+                    console.error(err);
+                }
+            });
+            
+        }catch(err){
+            console.log('reading/writing to user registry failed. ', err);
+        }
+        /*
         //Look into append to file after day one of putting into production
-        fs.writeFile('public/registry.txt', data, err =>{
+        fs.appendFile('public/registry.txt', data, err =>{
             if(err){
                 console.error(err);
             }
-        });
+        });*/
     }else{
         //formType must be a login
         //Check login information
@@ -111,20 +135,4 @@ function addSalt(pword){
     return (saltyPassword);
 }
 
-async function checkUser(uName){
-    let userExists = false;
-    try{
-        const data = fs.readFileSync('public/registry.txt');
-        const users = JSON.parse(data);
-        userExists = users.some(user => user.username == uName);
-        
-        if(userExists){
-            console.log('User found!');
-        }else{
-            console.log('User not found.');
-        }
-    }catch(err){
-        console.error('File read error:', err);
-    }
-    return userExists;
-}
+

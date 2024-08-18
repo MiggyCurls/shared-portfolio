@@ -1,6 +1,3 @@
-[{"email":"EmailOne@miami.edu","username":"UsernameOne","password":"00a5e2438acd72cc95b0706393032fc2","salt":125069}
-,{"email":"EmailTwo@miami.edu","username":"UsernameTwo","password":"c997dbba49a4e46a50e0a731d3761180","salt":37513}
-,{"email":"EmailThree@email.com","username":"UsernameThree","password":"1667d3681e930070d6d2668ab84ad44b","salt":275747}
-,{"email":"EmailPoop@gmail.com","username":"Poopy","password":"0b15162135d40f30845f5090e42313fa","salt":301420}
-,{"email":"EmailTwenty@email.com","username":"UsernameTwenty","password":"d998a944dca613866e3db54801625f24","salt":991597}
+
+[{"email":"asd@miami.com","username":"Kavya","password":"3cf3c50ce63cbaac2e1bf6b7a56361e0","salt":35384}
 ]

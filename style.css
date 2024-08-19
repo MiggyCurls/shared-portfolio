@@ -154,3 +154,47 @@ figcaption {
 .not-hovered {
     opacity: 0.5;
 }
+/* 
+ Will design to make it look like a terminal
+*/
+#terminal {
+    display:flex;
+    flex-direction:row;
+}
+#cliPath:hover {
+    border:initial;
+    font-family: var(--font-main);
+    font-weight:400;
+    font-style:normal;
+    font-size:80px;
+    color:var(--color-main);
+    cursor:pointer;
+    padding:0px;
+}
+#cli {
+    background-color:rgba(30,111,20,0.2);
+    align-self:center;
+    box-sizing:border-box;
+    border:0;
+    height:80px;
+    width:auto;
+    font-family: var(--font-main);
+    font-weight:300;
+    font-size:40px;
+    color:var(--color-main);
+}
+.outputText {
+    color:var(--color-main);
+    font-family: var(--font-main);
+    font-weight:200;
+    font-size:25px;
+}
+#commandOutput {
+    height:200px;
+    overflow-y:auto;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+}
+#commandOutput::-webkit-scrollbar {
+    display:none;
+}

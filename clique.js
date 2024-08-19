@@ -3,7 +3,164 @@
     and website only. Make the website less boring and 
     show how creative you can be.
 */
+document.getElementById('cli').addEventListener('keyup', function onEvent(e){
+    if(e.key == 'Enter'){
+        useCommandLine();
+    }
+});
+async function useCommandLine(){
+    const input = document.getElementById('cli');
+    const val = input.value;
+    const leftInd = val.indexOf('\\');
+    let path;
+    if(leftInd != -1){
+        //rel path found inside
+        path = val.substring(3, val.length);
+        cdInto(path);
+    }
+    switch(val){
+        case 'ls':
+            //list files
+            loading();
+            await timeout(1250);
+            cliReady();
+            lsOutput();
+            break;
+        case 'cat classifiedDoc':
+            //attempt to read secrets file
+            catOutput();
+            break;
+        case 'cd Secrets':
+            //change to Secrets directory
+            cdInto('Secrets');
+            break;
+        case 'cd Users':
+            //change to Users directory
+            cdInto('Users');
+            break;
+        case 'cd userOne':
+            //change to userOne directory
+            cdInto('userOne');
+            break;
+        case 'cd ..':
+            //Go back a directory
+            cdBack();
+            break;
+        case 'cd ~':
+            //Go to home directory
+            cdInto('~');
+            break;
+        case 'cls':
+            //clear screen
+            clearTerminal();
+            break;
+        default:
+            console.log('unrecognized command/option entered');
+            break;
+    }
+}
+function timeout(ms){
+    return new Promise (resolve => setTimeout(resolve, ms));
+}
+async function catOutput(){
+    const output = document.getElementById('commandOutput');
+    clearTerminal();
+    for(let i = 0; i < 5; i++){
+        output.innerHTML += "<p class='outputText'> ACCESS DENIED !!!!!!!</p>";
+        output.scrollTop = output.scrollHeight;
+        await timeout(500);
+    }
+}
+function cdBack(){
+    //CD back a directory
+    let path = document.getElementById('cliPath').innerText;
+    const end = path.lastIndexOf("\\");
+    if(end > 2){
+        path = path.substring(0, end) + '>';
+        document.getElementById('cliPath').innerText = path;
+        document.getElementById('cli').value = '';
+        clearTerminal();
+    }else if(end == 2){
+        document.getElementById('cliPath').innerText = 'C:\\>';
+        document.getElementById('cli').value = '';
+        clearTerminal();
+    }else{
+        console.log('cannot go further back');
+    }
+}
+function cdInto(dir){
+    //CD into a specific directory
+    const path = document.getElementById('cliPath');
+    const div = document.getElementById('commandOutput');
+    const userInput = document.getElementById('cli');
+    let str;
+    userInput.value = '';
+    div.innerHTML = '';
+    if(dir == 'Secrets' && path.innerText == "C:\\Users\\userOne>"){
+        path.innerText = "C:\\Users\\userOne\\Secrets>";
+    }else if(dir == 'Users' && path.innerText == "C:\\>"){
+        path.innerText = "C:\\Users>";
+    }else if(dir == 'userOne' && path.innerText == "C:\\Users>"){
+        path.innerText = "C:\\Users\\userOne>";
+    }else if(dir == '~'){
+        path.innerText = "C:\\>";
+    }else if(dir == "Users\\userOne" && path.innerText == "C:\\>"){
+        str = path.innerText.substring(0, path.innerText.length-1);
+        path.innerText = (str + (dir + '>'));
+    }else if(dir == "userOne\\Secrets" && path.innerText == "C:\\Users>"){
+        str = path.innerText.substring(0, path.innerText.length-1);
+        path.innerText = (str + '\\' + (dir + '>'));
+    }else if(dir == "Users\\userOne\\Secrets" && path.innerText == "C:\\>"){
+        path.innerText = ("C:\\" + dir + ">");
+    }
+}
+function lsOutput(){
+    const div = document.getElementById('commandOutput');
+    const header = `<pre class='outputText'>Mode           LastWriteTime      Length  Name</pre>`;
+    const path = document.getElementById('cliPath');
+    let text = "<pre class='outputText'>";
+    let footer;
 
+    for (let i = 0; i < 46; i++){
+        if(i <= 5 || (i >= 15 && i <= 28) || (i >= 34 && i <= 39) || i >= 42){
+            text += "-";
+        }else{
+            text += " ";
+        }
+    }
+    text += "</pre>";
+    switch(path.innerText){
+        case "C:\\Users\\userOne\\Secrets>":
+            //show secrets
+            footer = "<pre class='outputText'>-ar---       8/10/1999  1:25 PM   classifiedDoc</pre>";
+            break;
+        case "C:\\Users\\userOne>":
+            //starting point
+            footer = "<pre class='outputText'>d-----       8/10/1999  1:23 PM        Secrets</pre>";
+            break;
+        case "C:\\Users>":
+            footer = "<pre class='outputText'>d-----       8/10/1999  1:22 PM        userOne</pre>";
+            break;
+        case "C:\\>":
+            footer = "<pre class='outputText'>d-----       8/10/1999  1:20 PM          Users</pre>";
+            break;
+    }
+    
+    div.innerHTML = header + '\n' + text + footer;
+}
+function clearTerminal(){
+    //Act as Cls in PowerShell
+    document.getElementById('cli').value = '';
+    document.getElementById('commandOutput').innerHTML = '';
+}
+function loading(){
+    document.getElementById('cli').value = '...';
+    document.getElementById('cli').setAttribute('readonly', true);
+}
+function cliReady(){
+    document.getElementById('cli').removeAttribute('readonly');
+    document.getElementById('cli').value = '';
+}
 function projHovers(){
     const projList = document.querySelectorAll('.projects');
     for(let i = 0; i < projList.length; i++){
@@ -38,6 +195,8 @@ function openDIR(elExcept){
             elements[i].style.margin = '1%';
         }
     }
+    const cli = document.getElementById('cli');
+    cli.style.display = 'none';
     const reverse = document.getElementById('reverse');
     reverse.style.display = 'initial';
     displayContent(elExcept);

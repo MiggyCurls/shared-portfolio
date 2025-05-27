@@ -39,7 +39,7 @@ table {
     border-style:double;
     background-color:var(--color-transOne);
     position:relative;
-    left:43%;
+    left:20%;
 }
 figcaption {
     font-size:large;
@@ -55,6 +55,7 @@ figcaption {
     display:none;
 }
 .textOptions {
+    width:55%;
     font-family: var(--font-main);
     font-weight:400;
     font-style:normal;
@@ -72,6 +73,7 @@ figcaption {
     font-weight:400;
     font-style:normal;
     color:var(--color-main);
+    font-size:30px;
 }
 #Heading {
     font-family:'Courier New', Courier, monospace;
@@ -90,6 +92,8 @@ figcaption {
     height:min-content;
     font-family:var(--font-main);
     color:black;
+    flex:1 1 300px;
+    min-width: 250px;
 }
 #inProgress {
     display:flex;
@@ -129,6 +133,8 @@ figcaption {
 .rowElements {
     display:flex;
     flex-direction:row;
+    flex-wrap:wrap;
+    gap:20px;
 }
 .Icons {
     width:25px;
@@ -160,6 +166,7 @@ figcaption {
 #terminal {
     display:flex;
     flex-direction:row;
+    width:20%;
 }
 #cliPath:hover {
     border:initial;
@@ -189,6 +196,9 @@ figcaption {
     font-weight:200;
     font-size:25px;
 }
+#content{
+    width:70%;
+}
 #commandOutput {
     height:200px;
     overflow-y:auto;
@@ -197,4 +207,119 @@ figcaption {
 }
 #commandOutput::-webkit-scrollbar {
     display:none;
+}
+
+a:visited{
+    color:green;
+}
+@media (max-height: 1200px){
+    .textContent{
+        font-size: 20px;
+    }
+    ul{
+        margin: 8px;
+    }
+}
+
+@media (max-height: 1000px){
+    .textContent{
+        font-size: 15px;
+    }
+    ul{
+        margin: 3px;
+    }
+}
+@media (max-width: 1500px){
+    .textOptions{
+        font-size:60px;
+        width:50%;
+    }
+    .textOptions:hover{
+        font-size:65px;
+    }
+    .textContent{
+        font-size:25px;
+    }
+    #content{
+        width:60%;
+    }
+    #computerScreen{
+        width:60%;
+    }
+}
+
+@media (max-width: 1200px){
+    .textOptions{
+        font-size:55px;
+        width:400px;
+    }
+    .textOptions:hover{
+        font-size:60px;
+    }
+    .textContent{
+        font-size:20px;
+    }
+    #content{
+        width:50%;
+    }
+    #computerScreen{
+        width:50%;
+    }
+}
+@media (max-width: 1000px){
+    .textOptions{
+        font-size: 50px;
+        width:30%;
+    }
+    .textOptions:hover{
+        font-size:55px;
+    }
+    #cli {
+        width: 250px;
+    }
+    .textContent{
+        font-size:15px;
+    }
+    #content{
+        width:40%;
+    }
+    #computerScreen {
+        width:40%;
+    }
+}
+@media (max-width: 800px){
+    .textOptions{
+        font-size: 40px;
+        width:20%;
+    }
+    .textOptions:hover{
+        font-size:50px;
+    }
+    #cli{
+        width: 150px;
+    }
+    .textContent{
+        font-size:10px;
+    }
+    content{
+        width:20%;
+    }
+}
+@media (max-width: 600px){
+    .textOptions{
+        font-size: 30px;
+        width:10%;
+    }
+    .textOptions:hover{
+        font-size:45px;
+    }
+    #cli{
+        width: 50px;
+    }
+    .textContent{
+        font-size:5px;
+    }
+    content{
+        width:10%;
+    }
 }

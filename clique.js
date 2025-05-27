@@ -225,7 +225,6 @@ function displayContent(element){
     div.innerHTML = text;
     projHovers();
     div.classList.add('textContent');
-    div.style.fontSize = '30px';
     
 }
 function backButton(){
@@ -235,12 +234,12 @@ function backButton(){
 function writeBio(){
     const bio = `<p id="intro-paragraph" align="center">
     Computer Science student, <i>Miguel Gomez</i>, and Electrical Engineering student, 
-    <i>Ian Rios</i>, have come together to showcase how our love for programming<br> can
+    <i>Ian Rios</i>, have come together to showcase how our love for programming can
     make this website and routinely add to it. This shows good initiative for
-    both of us and acts as good practice to improve our knowledge of web<br>
+    both of us and acts as good practice to improve our knowledge of web
     development; the cooperative nature of this website allows for our 
     creativity in our fields to come to fruition and work to accomplish what 
-    we set our minds on.<br> <b>Version control</b> of this code will be down with <b>Git</b>
+    we set our minds on. <b>Version control</b> of this code will be down with <b>Git</b>
     and the Git provider to host our code (Remote repository) will be hosted 
     on <b>Github</b>.
     </p>`;
@@ -298,32 +297,46 @@ function writeSkills(){
                         </h4>
                         <ul>
                             <li>
+                                <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">
                                 Java
                                 <img class="Icons" src="ImageAssets/javaIcon.png" alt="Java Icon">
+                                </a>
                             </li>
                             <li>
+                                <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">
                                 Python
                                 <img class="Icons" src="ImageAssets/pythonIcon.webp" alt="Python Icon">
+                                </a>
                             </li>
                             <li>
+                                <a href="https://en.wikipedia.org/wiki/C_(programming_language)">
                                 C (Programming Language)
                                 <img class="Icons" src="ImageAssets/CIcon.png" alt="C Icon">
+                                </a>
                             </li>
                             <li>
+                                <a href="https://en.wikipedia.org/wiki/SQL">
                                 SQL
                                 <img class="Icons" src="ImageAssets/SQLIcon.png" alt="SQL Icon">
+                                </a>
                             </li>
                             <li>
+                                <a href="https://en.wikipedia.org/wiki/HTML">
                                 HTML
                                 <img class="Icons" src="ImageAssets/HTMLIcon.png" alt="HTML Icon">
+                                </a>
                             </li>
                             <li>
+                                <a href="https://en.wikipedia.org/wiki/CSS">
                                 CSS
                                 <img class="Icons" src="ImageAssets/CSSIcon.png" alt="CSS Icon">
+                                </a>
                             </li>
                             <li>
+                                <a href="https://en.wikipedia.org/wiki/JavaScript">
                                 Javascript
                                 <img class="Icons" src="ImageAssets/JavascriptIcon.png" alt="Javascript Icon">
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -333,20 +346,28 @@ function writeSkills(){
                         </h4>
                         <ul>
                             <li>
+                                <a href="https://en.wikipedia.org/wiki/C_(programming_language)">
                                 C
                                 <img class="Icons" src="ImageAssets/CIcon.png" alt="C Icon">
+                                </a>
                             </li>
                             <li>
+                                <a href="https://en.wikipedia.org/wiki/C%2B%2B">
                                 C++
                                 <img class="Icons" src="ImageAssets/CPlusPlusIcon.png" alt ="C++ Icon">
+                                </a>
                             </li>
                             <li>
+                                <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">
                                 Java
                                 <img class="Icons" src="ImageAssets/javaIcon.png" alt="Java Icon">
+                                </a>
                             </li>
                             <li>
+                                <a href="https://en.wikipedia.org/wiki/JavaScript">
                                 Javascript
                                 <img class="Icons" src="ImageAssets/JavascriptIcon.png" alt="Javascript Icon">
+                                </a>
                             </li>
                         </ul>
                     </div>
